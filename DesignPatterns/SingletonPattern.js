@@ -3,24 +3,22 @@
     Author: DevSage (Youtube) -> https://www.youtube.com/DevSage
 */
 
-const Singleton = (function(){
+const Singleton = (function () {
   let pManager
 
   function ProcessManager() { /*...*/ }
 
-  function createProcessManager()
-  {
+  function createProcessManager() {
     pManager = new ProcessManager()
     return pManager
   }
 
   return {
-      getProcessManager: () =>
-      {
-        if(!pManager)
-          pManager = createProcessManager()
-        return pManager
-      }
+    getProcessManager: () => {
+      if (!pManager)
+        pManager = createProcessManager()
+      return pManager
+    }
   }
 })()
 
@@ -28,3 +26,4 @@ const singleton = Singleton.getProcessManager()
 const singleton2 = Singleton.getProcessManager()
 
 console.log(singleton === singleton2) // true
+console.log(singleton, singleton2);
